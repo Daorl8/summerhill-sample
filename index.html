@@ -163,6 +163,8 @@
   .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--berry);background:#fff}
   .consent{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;color:var(--ink-soft);margin:6px 0 16px}
   .consent input{margin-top:3px;accent-color:var(--berry)}
+  .form-warn{display:none;color:var(--berry-deep);font-size:.85rem;font-weight:600;margin-bottom:12px;padding:10px 13px;background:#F7ECDF;border:1px solid #E8D3BE;border-radius:10px}
+  .form-warn.show{display:block}
   form .btn-primary{width:100%;justify-content:center}
   .form-msg{display:none;text-align:center;padding:26px 10px}
   .form-msg .ck{width:56px;height:56px;border-radius:50%;background:var(--berry);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px}
@@ -428,6 +430,7 @@
           <textarea id="fm" name="message" placeholder="원하시는 날짜, 인원, 궁금한 점 등을 편하게 적어주세요."></textarea>
         </div>
         <label class="consent"><input type="checkbox" id="fa" required><span>수집한 이름·연락처를 상담 연락 목적으로만 이용하는 데 동의합니다.</span></label>
+        <p class="form-warn" id="formWarn" role="alert" aria-live="assertive"></p>
         <button type="submit" class="btn btn-primary">신청·문의 보내기</button>
       </div>
       <div class="form-msg" id="formMsg">
@@ -503,11 +506,15 @@
   var form=document.getElementById('applyForm');
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    var warn=document.getElementById('formWarn');
+    function showWarn(msg,el){warn.textContent=msg;warn.classList.add('show');if(el){el.focus();}}
     var name=document.getElementById('fn').value.trim();
     var contact=document.getElementById('fc').value.trim();
     var agree=document.getElementById('fa').checked;
-    if(!name||!contact){alert('이름과 연락받을 곳을 입력해 주세요.');return;}
-    if(!agree){alert('개인정보 수집·이용에 동의해 주세요.');return;}
+    if(!name){showWarn('이름을 입력해 주세요.',document.getElementById('fn'));return;}
+    if(!contact){showWarn('연락받을 곳(연락처 또는 이메일)을 입력해 주세요.',document.getElementById('fc'));return;}
+    if(!agree){showWarn('개인정보 수집·이용에 동의해 주세요.',document.getElementById('fa'));return;}
+    warn.classList.remove('show');
     document.getElementById('formInner').style.display='none';
     document.getElementById('formMsg').style.display='block';
   });
