@@ -9,7 +9,7 @@
 <meta property="og:description" content="군포 금정역 디저트·베이킹 클래스. 케이크·베이킹·카페창업 클래스와 예약주문 — 신청·문의를 한 페이지에서.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://summerhill-sample.lgt3232.workers.dev/sh-hero.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238B6B47'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23FCFBF9' font-family='sans-serif'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23F7EFC9%22/%3E%3Cg%20transform%3D%22translate%280%2C6%29%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2230%22%20r%3D%2212%22%20fill%3D%22%23F2A23E%22/%3E%3Cpath%20d%3D%22M44.2%2027.4%20L49.4%2023.7%20L43.0%2024.1%20Z%20M42.9%2023.8%20L46.7%2018.7%20L40.8%2021.1%20Z%20M40.5%2020.9%20L42.6%2014.8%20L37.7%2018.9%20Z%20M37.4%2018.7%20L37.6%2012.4%20L34.1%2017.7%20Z%20M33.7%2017.6%20L32.0%2011.5%20L30.3%2017.6%20Z%20M29.9%2017.7%20L26.4%2012.4%20L26.6%2018.7%20Z%20M26.3%2018.9%20L21.4%2014.8%20L23.5%2020.9%20Z%20M23.2%2021.1%20L17.3%2018.7%20L21.1%2023.8%20Z%20M21.0%2024.1%20L14.6%2023.7%20L19.8%2027.4%20Z%22%20fill%3D%22%23F2A23E%22/%3E%3Cpath%20d%3D%22M6%2036%20Q32%2024%2058%2034%22%20stroke%3D%22%231C5C31%22%20stroke-width%3D%225.5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preload" as="image" href="sh-hero.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +56,9 @@
   .logo{display:flex;flex-direction:column;line-height:1}
   .logo .kr{font-family:var(--serif);font-weight:700;font-size:1.18rem}
   .logo .en{font-family:var(--script);font-size:1.02rem;color:var(--berry);margin-top:1px}
+  .logo.logo-h{flex-direction:row;align-items:center;gap:9px}
+  .logo-h .logo-text{display:flex;flex-direction:column;line-height:1}
+  .logo-mark{width:38px;height:31px;flex-shrink:0}
   .menu{display:none;gap:30px;align-items:center}
   .menu a{font-size:.94rem;color:var(--ink-soft);font-weight:500;transition:.15s}
   .menu a:hover{color:var(--berry)}
@@ -218,9 +221,9 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo" aria-label="썸머힐디저트 홈">
-      <span class="kr">썸머힐디저트</span>
-      <span class="en">Summerhill Dessert</span>
+    <a href="#top" class="logo logo-h" aria-label="썸머힐디저트 홈">
+      <svg class="logo-mark" aria-hidden="true" viewBox="0 0 64 52" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="30" r="12" fill="#F2A23E"/><path d="M44.2 27.4 L49.4 23.7 L43.0 24.1 Z M42.9 23.8 L46.7 18.7 L40.8 21.1 Z M40.5 20.9 L42.6 14.8 L37.7 18.9 Z M37.4 18.7 L37.6 12.4 L34.1 17.7 Z M33.7 17.6 L32.0 11.5 L30.3 17.6 Z M29.9 17.7 L26.4 12.4 L26.6 18.7 Z M26.3 18.9 L21.4 14.8 L23.5 20.9 Z M23.2 21.1 L17.3 18.7 L21.1 23.8 Z M21.0 24.1 L14.6 23.7 L19.8 27.4 Z" fill="#F2A23E"/><path d="M6 36 Q32 24 58 34" stroke="#1C5C31" stroke-width="5.5" fill="none" stroke-linecap="round"/></svg>
+      <span class="logo-text"><span class="kr">썸머힐디저트</span><span class="en">Summerhill Dessert</span></span>
     </a>
     <nav class="menu" aria-label="주요 메뉴">
       <a href="#about">소개</a>
